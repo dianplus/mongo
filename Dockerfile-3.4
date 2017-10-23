@@ -2,7 +2,7 @@ FROM mongo:3.4
 MAINTAINER Analyser, analyser@gmail.com
 
 COPY docker-entrypoint.sh /usr/local/bin/
-RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
+RUN ln -f -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 EXPOSE 27017
