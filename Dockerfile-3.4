@@ -3,6 +3,9 @@ MAINTAINER Analyser, analyser@gmail.com
 
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN ln -f -s /usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
+
+USER mongodb
+
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 
 EXPOSE 27017
